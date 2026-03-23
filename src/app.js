@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
     local: {
       docs     : 'http://localhost:3000/api-docs',
       articles : 'http://localhost:3000/api/articles'
-    };
+    }
   });
 });
 
