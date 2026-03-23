@@ -25,13 +25,18 @@ app.use('/api/articles', articlesRouter);
 
 // ─── Route racine ─────────────────────────────────────────────────────────────
 app.get('/', (req, res) => {
+  const base = `${req.protocol}://${req.get('host')}`;
   res.json({
     message   : '🚀 Blog API - INF222 TAF1',
     version   : '1.0.0',
-    docs      : 'http://localhost:3000/api-docs',
+    docs      : `${base}/api-docs`,
     endpoints : {
+      articles : `${base}/api/articles`
+    },
+    local: {
+      docs     : 'http://localhost:3000/api-docs',
       articles : 'http://localhost:3000/api/articles'
-    }
+    };
   });
 });
 
